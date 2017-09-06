@@ -70,8 +70,8 @@ print "-" * 50, "\n", pivoted.head()
 pivoted.reset_index('movie_id', inplace=True)
 
 disagreements = pivoted[pivoted.movie_id.isin(most_50.index)]['diff']
-disagreements.sort_values().plot(kind='barh', figsize=[9, 15])
-# plt.title('Male vs. Female Avg. Ratings\n(Difference > 0 = Favored by Men)')
-# plt.ylabel('Title')
-# plt.xlabel('Average Rating Difference')
-# plt.show()
+disagreements.sort_values().plot(kind='barh')
+plt.title('Male vs. Female Avg. Ratings\n(Difference > 0 = Favored by Men)')
+plt.ylabel('Title')
+plt.xlabel('Average Rating Difference')
+plt.show()
