@@ -23,4 +23,5 @@ dept_min = by_dept['salary'].min()
 dept_max = by_dept['salary'].max()
 d = {'avg':dept_mean.round(2),'max':dept_max,'min':dept_min}
 print "-"*50
-print pd.DataFrame(d)
+dept_salary_stats=pd.DataFrame(d)
+dept_salary_stats.to_csv('dept_salary_stats.csv', encoding='utf-8')
