@@ -36,5 +36,4 @@ chicago = chicago.groupby('department').apply(ranker)
 print "-" * 50
 print(chicago[chicago.dept_rank == 1].head(7))
 
-print "-" * 50, "\n", chicago[chicago.department == "LAW"][
-                      :5]  # each employee ranks within their department based on salary
+print "-" * 50, "\n", chicago[chicago.department == "LAW"][:5]  # each employee ranks within department based on salary
