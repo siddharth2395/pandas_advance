@@ -9,11 +9,13 @@ chicago = pd.read_csv('city-of-chicago-salaries.csv',
 
 by_dept = chicago.groupby('department')
 
+
 def ranker(df):
     """Assigns a rank to each employee based on salary, with 1 being the highest paid.
     Assumes the data is DESC sorted."""
     df['dept_rank'] = np.arange(len(df)) + 1
     return df
+
 
 chicago.sort_values('salary', ascending=False, inplace=True)
 chicago = chicago.groupby('department').apply(ranker)
