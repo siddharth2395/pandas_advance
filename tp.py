@@ -15,11 +15,12 @@ print "-"*50,"\nemployees who's salary is max.\n",chicago[(chicago['salary'] == 
 
 by_dept = chicago.groupby('department')
 
-print "-"*50,"\n avg of each dept\n",by_dept['salary'].mean() #finding avg of each department
+dept_mean=by_dept['salary'].mean()
+print "-"*50,"\n avg of each dept\n",dept_mean #finding avg of each department
 
 #finding min and max of each department and combining in to one dataframe
 dept_min = by_dept['salary'].min()
 dept_max = by_dept['salary'].max()
-d = {'max':dept_max,'min':dept_min}
+d = {'avg':dept_mean.round(2),'max':dept_max,'min':dept_min}
 print "-"*50
 print pd.DataFrame(d)
